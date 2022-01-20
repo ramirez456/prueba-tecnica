@@ -1,10 +1,20 @@
 package main
 
+import (
+	"gopkg.in/mgo.v2/bson"
+)
+
 type Beer struct {
-	Id uint `json:"id"`
+	ID  bson.ObjectId `bson:"_id"`
 	Name string `json:"name"`
+	Brewery string `json: "brewery"`
+	Country string `json: "country"`
 	Price float64 `json: "price"`
-	Brand string `json: "brand"`
+	Currency string `json: "currency"`
 }
 
 type Beers []Beer
+
+type PriceBeerBox struct {
+	PriceTotal float64
+}

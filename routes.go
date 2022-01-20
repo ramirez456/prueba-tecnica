@@ -28,27 +28,33 @@ func NewRouter() *mux.Router {
 
 var routes = Routes{
 	Route {
-		"BeerList",
+		"index",
 		"GET",
-		"/beers",
-		BeerList,
+		"/",
+		index,
 	},
 	Route {
-		"BeerAdd",
+		"searchBeers",
+		"GET",
+		"/beers",
+		searchBeers,
+	},
+	Route {
+		"addBeers",
 		"POST",
 		"/beers",
-		BeerAdd,
+		addBeers,
 	},
 	Route {
-		"BeerShow",
+		"searchBeerById",
 		"GET",
 		"/beers/{beerID}",
-		BeerShow,
+		searchBeerById,
 	},
 	Route {
-		"BeerPriceByBox",
+		"boxBeerPriceById",
 		"GET",
-		"/beers/{beerID}/boxprice",
-		BeerPriceByBox,
+		"/beers/{beerID}/boxprice/{quantity}/{currency}",
+		boxBeerPriceById,
 	},
 }
