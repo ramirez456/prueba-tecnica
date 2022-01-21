@@ -53,6 +53,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 
 }
+
 func searchBeers(w http.ResponseWriter, r *http.Request){
 
 	session := mongoConn.Copy()
